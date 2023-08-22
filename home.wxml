@@ -1,0 +1,60 @@
+<!--pages/home/home.wxml-->
+<scroll-view scroll-y class="scrollPage">
+
+  <button bindtap="startBatchImport">开始导入数据</button>
+
+  <!--小程序标题-->
+  <view class="title" style="width: 430rpx; height: 36rpx; display: block; box-sizing: border-box; position: relative; left: 191rpx; top: 0rpx">欢迎来到森林动物识别小程序</view>
+  <!--小程序背景图片-->
+  <image src='cloud://forest-annimal-1g6i3v9j79b369f9.666f-forest-annimal-1g6i3v9j79b369f9-1320223610/feedback_images/1692350834221.png'
+mode='widthFix' class='png'  style="width: 452rpx; height: 409rpx; display: inline-block; box-sizing: border-box; left: 138rpx; top: 1rpx; position: relative"></image>
+
+
+  <view class="padding radius text-center light bg-white view" style="position: relative; left: 1rpx; top: -6rpx; width: 750rpx; height: 146rpx; display: block; box-sizing: border-box">
+    <!--使用colorUI组件设计搜索框-->
+    <view class="box">
+      <view class="cu-bar bg-white search">
+        <!--form表单组件-->
+        <view class="search-form radius">
+          <text class="cuIcon-search"></text>
+          <!--绑定监听搜索框信息-->
+          <input type="text" placeholder="搜索关键词" confirm-type="search" bindinput="searchInput"></input>
+        </view>
+        <view class="action">
+          <!--设置绑定弹窗搜索按钮-->
+          <button class="cu-btn bg-blue shadow" bindtap="showModal" data-target="Modal" style="position: relative; left: 38rpx; top: 0rpx; width: 242rpx; height: 64rpx; display: flex; box-sizing: border-box">搜索</button>
+        </view>
+      </view>
+    </view>
+    <!--model弹窗组件--普通窗口-->
+    <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+      <view class="cu-dialog">
+        <view class="cu-bar bg-grey justify-end">
+          <view class='content'>{{keyWord1}}</view>
+          <!--弹窗标题-->
+          <view class='action' bindtap="hideModal">
+            <text class="cuIcon-close text-red"></text>
+            <!--设置关闭按钮-->
+          </view>
+        </view>
+        <view class="padding-xl">
+          {{description1}}
+          <!--弹窗内容-->
+        </view>
+
+        <view wx:if="{{cond}}">
+          <!--校验：如果出现两个相似值-->
+          <view class="cu-bar bg-grey justify-end">
+            <view class='content'>{{keyWord2}}</view>
+            <!--弹窗标题-->
+          </view>
+          <view class="padding-xl">
+            {{description2}}
+            <!--弹窗内容-->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</scroll-view>
