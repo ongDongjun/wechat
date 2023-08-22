@@ -1,0 +1,21 @@
+<!-- pages/list/list.wxml -->
+<view class="container">
+  <view wx:for="{{ uploadedImages }}" wx:key="index">
+    <view class="image-item">
+      <image class="image" src="{{ item }}" mode="aspectFit"></image>
+      <input
+        class="description-input"
+        placeholder="输入图片描述"
+        data-index="{{ index }}"
+        bindinput="inputDescription"
+      />
+      <button
+        class="favorite-button"
+        data-index="{{ index }}"
+        bindtap="addToFavorites"
+      >
+        收藏
+      </button>
+    </view>
+  </view>
+</view>

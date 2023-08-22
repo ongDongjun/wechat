@@ -1,0 +1,33 @@
+/* favorites.scss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.image {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.image-item {
+  margin: 10px;
+  text-align: center;
+}
+
+.image-item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.description {
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+}
