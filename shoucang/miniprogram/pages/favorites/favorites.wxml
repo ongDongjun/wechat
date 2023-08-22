@@ -1,0 +1,16 @@
+<!-- pages/favorites/favorites.wxml -->
+<view class="container">
+  <view wx:for="{{ favoriteItems }}" wx:key="index">
+    <view class="image-item">
+      <image class="image" src="{{ item.imageUrl }}" mode="aspectFit"></image>
+      <!-- 修改这里的 class 名称 -->
+      <input
+        class="description-input"
+        placeholder="输入图片描述"
+        value="{{ item.description }}"
+        bindinput="setDescription"
+        data-index="{{ index }}"
+      ></input>
+    </view>
+  </view>
+</view>

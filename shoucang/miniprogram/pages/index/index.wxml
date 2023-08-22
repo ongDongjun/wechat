@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="title">欢迎使用森林动物识别</view>
+  <button class="upload-button" bindtap="capturePhoto">拍摄上传</button>
+  <view style="margin-top: 10px;"></view>
+  <button class="upload-button" bindtap="chooseImage">其他上传</button>
+  <view style="margin-top: 10px;"></view>
+  <button class="feedback-button" bindtap="showFeedbackModal">提交反馈</button>
+  <!-- 添加 "我的收藏" 按钮 -->
+  <view style="margin-top: 10px;"></view>
+  <button class="favorites-button" bindtap="addToFavorites">我的收藏</button>
+
+  <view wx:for="{{ images }}" wx:key="index">
+    <image class="image" src="{{ item.url }}" mode="aspectFit"></image>
+    <button class="button" bindtap="addToFavorites" data-index="{{ index }}">{{ isFavorite(index) ? '取消收藏' : '收藏' }}</button>
+  </view>
+
+  <!-- 其他页面内容 -->
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

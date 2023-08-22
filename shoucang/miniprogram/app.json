@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/logs/logs",
+    "pages/favorites/favorites"
+  ],
+  "window": {
+    "navigationBarTitleText": "森林动物识别"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+  
+} 
